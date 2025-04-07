@@ -32,8 +32,6 @@ git clone https://github.com/Ayub-07/Bat-Ball-Stump-Game.git
 - Clear game rules
 - Smooth animations and transitions
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Author
-Mohammed Ayub 
+Mohammed Ayub - iamayub007@gmail.com
