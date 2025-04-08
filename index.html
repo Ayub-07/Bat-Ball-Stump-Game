@@ -20,20 +20,34 @@
       </ul>
     </div>
 
+    <div class="score-board">
+      <div class="score">
+        <h3>Your Score</h3>
+        <div class="score-display">
+          <span class="win">Wins: <span id="wins">0</span></span>
+          <span class="loss">Losses: <span id="losses">0</span></span>
+          <span class="tie">Ties: <span id="ties">0</span></span>
+        </div>
+      </div>
+    </div>
+
     <div class="buttons">
       <button class="button1 gen" onclick="
         genCompChoice();
         choiceIsBat();
+        updateScore();
         "> BAT</button>
 
       <button class="button2 gen" onclick=" 
         genCompChoice();
         choiceIsBowl();
+        updateScore();
         "> BALL</button>
 
       <button class="button3 gen" onclick="
         genCompChoice();
         choiceIsStump();
+        updateScore();
         "> STUMP</button>
     </div>
   </div>
@@ -42,6 +56,12 @@
     <p>&copy; 2025 Mohammed Ayub. All rights reserved.</p>
   </footer>
   <script>
+    let score = {
+      win : 0,
+      lose: 0,
+      tie : 0
+    };
+
     let computerChoice;
     function genCompChoice(){
       let randomNum = Math.random()*3;
@@ -53,35 +73,61 @@
         computerChoice='STUMP';
     }
 
-      var result;
+    function updateScore() {
+      document.getElementById('wins').textContent = score.win;
+      document.getElementById('losses').textContent = score.lose;
+      document.getElementById('ties').textContent = score.tie;
+    }
 
-      function choiceIsBat(){
-        if (computerChoice==='BAT')
-          result = `It's a TIE`;
-        else if (computerChoice==='BALL')
-          result = 'Congo !!! You won.';
-        else if (computerChoice==='STUMP')
-          result = 'You lost Gentleman';
-        alert(`Your choice is BAT. \nComputer's choice is ${computerChoice}.\n${result}.`);
+    let result;
+
+    function choiceIsBat(){
+      if (computerChoice==='BAT'){
+        result = `It's a TIE`;
+        score.tie++;
       }
-      function choiceIsBowl(){
-        if (computerChoice==='BAT')
-          result = 'You lost Gentleman';
-        else if (computerChoice==='BALL')
-          result = `It's a TIE`;
-        else if (computerChoice==='STUMP')
-          result = 'Congo !!! You won.';
-        alert(`Your choice is BALL. \nComputer's choice is ${computerChoice}.\n${result}.`);
-        }
-      function choiceIsStump(){
-        if (computerChoice==='BAT')
-          result = 'Congo !!! You won.';
-        else if (computerChoice==='BALL')
-          result = 'You lost Gentleman';
-        else if (computerChoice==='STUMP')
-          result = `It's a TIE`;
-        alert(`Your choice is STUMP. \nComputer's choice is ${computerChoice}.\n${result}.`);
+      else if (computerChoice==='BALL'){
+        result = 'Congo !!! You won.';
+        score.win++;
       }
+      else if (computerChoice==='STUMP'){
+        result = 'You lost Gentleman';
+        score.lose++;
+      }
+      alert(`Your choice is BAT. \nComputer's choice is ${computerChoice}.\n${result}.`);
+    }
+
+    function choiceIsBowl(){
+      if (computerChoice==='BAT'){
+        result = 'You lost Gentleman';
+        score.lose++;
+      }
+      else if (computerChoice==='BALL'){
+        result = `It's a TIE`;
+        score.tie++;
+      }
+      else if (computerChoice==='STUMP'){
+        result = 'Congo !!! You won.';
+        score.win++;
+      }
+      alert(`Your choice is BALL. \nComputer's choice is ${computerChoice}.\n${result}.`);
+    }
+
+    function choiceIsStump(){
+      if (computerChoice==='BAT'){
+        result = 'Congo !!! You won.';
+        score.win++;
+      }
+      else if (computerChoice==='BALL'){
+        result = 'You lost Gentleman';
+        score.lose++;
+      }
+      else if (computerChoice==='STUMP'){
+        result = `It's a TIE`;
+        score.tie++;
+      }
+      alert(`Your choice is STUMP. \nComputer's choice is ${computerChoice}.\n${result}.`);
+    }
   </script>
 </body>
 </html>

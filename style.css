@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 body {
@@ -20,67 +20,109 @@ body {
 }
 
 h1 {
-  text-align: center;
-  margin: 20px 0;
+  margin: 20px;
   color: #2d3436;
+  font-size: 2.5rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .rules {
-  background-color: white;
+  background: white;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 20px 0;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .rules h2 {
-  text-align: center;
   color: #2d3436;
   margin-bottom: 15px;
 }
 
 .rules ul {
-  list-style-position: inside;
-  text-align: left;
-  margin-left: 20px;
+  list-style-type: none;
+  padding: 0;
 }
 
 .rules li {
   margin: 10px 0;
+  color: #636e72;
+}
+
+.score-board {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.score h3 {
   color: #2d3436;
+  margin-bottom: 15px;
+}
+
+.score-display {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 1.2rem;
+}
+
+.score-display span {
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.win {
+  color: #2d3436;
+  background-color: rgba(0, 255, 13, 0.2);
+}
+
+.loss {
+  color: #2d3436;
+  background-color: rgba(255, 38, 0, 0.2);
+}
+
+.tie {
+  color: #2d3436;
+  background-color: rgba(118, 193, 210, 0.2);
+}
+
+.score-display span span {
+  padding: 0;
+  background: none;
 }
 
 .gen {
-  height: 60px;
+  height: 50px;
   width: 200px;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 20px;
-  border: none;
+  border: 3px solid rgb(0, 0, 0);
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .button1 {
-  background-color: #fdcb6e;
-  color: #2d3436;
+  background-color: rgba(255, 183, 0,0.7);
 }
 
 .button2 {
-  background-color: #ff7675;
-  color: white;
+  background-color:rgba(255, 38, 0,0.7);
 }
 
 .button3 {
-  background-color: #00b894;
-  color: white;
+  background-color: rgba(0, 255, 13,0.5);
 }
 
 .gen:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in;
+  box-shadow: 5px 5px 5px rgb(118, 193, 210);
 }
 
 .buttons {
@@ -92,7 +134,7 @@ h1 {
 
 footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
   background-color: #2d3436;
   color: white;
   margin-top: auto;
