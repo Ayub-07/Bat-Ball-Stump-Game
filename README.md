@@ -12,6 +12,7 @@ A simple web-based game similar to Rock-Paper-Scissors, but with a cricket theme
 - HTML5
 - CSS3
 - JavaScript
+- Local Storage API
 
 ## How to Play
 1. Click on any of the three buttons (BAT, BALL, or STUMP)
@@ -27,7 +28,8 @@ A simple web-based game similar to Rock-Paper-Scissors, but with a cricket theme
 - Score tracking system
   - Tracks wins, losses, and ties
   - Real-time score updates
-  - Persistent score display
+  - Persistent score display using local storage
+  - Score persists even after browser refresh
 
 ## Setup
 1. Clone the repository:
