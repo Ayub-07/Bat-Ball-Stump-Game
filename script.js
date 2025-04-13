@@ -74,8 +74,20 @@
       showResult('STUMP', computerChoice, result);
     }
 
+    function updateImages(playerChoice, compChoice) {
+      const playerImg = document.querySelector('#player-choice');
+      const computerImg = document.querySelector('#computer-choice');
+      
+      playerImg.src = `${playerChoice.toLowerCase()}.jpg`;
+      computerImg.src = `${compChoice.toLowerCase()}.jpg`;
+      
+      playerImg.style.display = 'block';
+      computerImg.style.display = 'block';
+    }
+
     function showResult(myChoice, computerChoice, result) {
       updateScore();
+      updateImages(myChoice, computerChoice);
       const display = document.querySelector('#display');
       display.style.display = 'block';
       display.textContent = `Your choice is ${myChoice}. Computer's choice is ${computerChoice}. ${result}.`;
@@ -89,6 +101,8 @@
       };
       updateScore();
       document.querySelector('#display').style.display = 'none';
+      document.querySelector('#player-choice').style.display = 'none';
+      document.querySelector('#computer-choice').style.display = 'none';
     }
 
     updateScore();

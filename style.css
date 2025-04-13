@@ -127,6 +127,10 @@ h1 {
   transition: transform 0.3s ease-in;
   box-shadow: 5px 5px 5px rgb(118, 193, 210);
 }
+.gen:active {
+  transform: translateY(5px);
+  box-shadow: 2px 2px 5px rgb(118, 193, 210);
+}
 
 .buttons {
   display: flex;
@@ -147,10 +151,39 @@ footer {
 
 
 #display {
+  display: none;
   color: #2d3436;
   font-size: 1.2rem;
   margin: 0;
-  display: none;
   text-align: center;
   line-height: 1.5;
+}
+
+.choices-display {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.choice-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.choice-container h3 {
+  margin-bottom: 15px;
+  color: #2d3436;
+}
+
+.choice-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: none;
 }

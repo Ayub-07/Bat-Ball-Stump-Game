@@ -31,28 +31,43 @@
       </div>
     </div>
 
+    <div class="choices-display">
+      <div class="choice-container">
+        <h3>Your Choice</h3>
+        <img id="player-choice" src="" alt="Your choice" class="choice-img">
+      </div>
+      <div class="choice-container">
+        <h3>Computer's Choice</h3>
+        <img id="computer-choice" src="" alt="Computer's choice" class="choice-img">
+      </div>
+    </div>
+
     <div class="buttons">
       <button class="button1 gen" onclick="
         genCompChoice();
         choiceIsBat();
         updateScore();
+        document.querySelector('.rules').style.display = 'none';
         "> BAT</button>
 
       <button class="button2 gen" onclick=" 
         genCompChoice();
         choiceIsBowl();
         updateScore();
+        document.querySelector('.rules').style.display = 'none';
         "> BALL</button>
 
       <button class="button3 gen" onclick="
         genCompChoice();
         choiceIsStump();
         updateScore();
+        document.querySelector('.rules').style.display = 'none';
         "> STUMP</button>
 
       <button class="button4 gen" onclick="
         localStorage.clear();
         resetScore();
+        document.querySelector('.rules').style.display = 'block';
         "> RESET</button>
     </div>
 
