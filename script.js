@@ -28,15 +28,15 @@
 
     function choiceIsBat(){
       if (computerChoice==='BAT'){
-        result = `It's a TIE`;
+        result = `TIE`;
         score.tie++;
       }
       else if (computerChoice==='BALL'){
-        result = 'Congo !!! You won.';
+        result = 'You WIN';
         score.win++;
       }
       else if (computerChoice==='STUMP'){
-        result = 'You lost Gentleman';
+        result = 'You LOST';
         score.lose++;
       }
       showResult('BAT', computerChoice, result);
@@ -44,15 +44,15 @@
 
     function choiceIsBowl(){
       if (computerChoice==='BAT'){
-        result = 'You lost Gentleman';
+        result = 'You LOST';
         score.lose++;
       }
       else if (computerChoice==='BALL'){
-        result = `It's a TIE`;
+        result = `TIE`;
         score.tie++;
       }
       else if (computerChoice==='STUMP'){
-        result = 'Congo !!! You won.';
+        result = 'You WON';
         score.win++;
       }
       showResult('BALL', computerChoice, result);
@@ -60,15 +60,15 @@
 
     function choiceIsStump(){
       if (computerChoice==='BAT'){
-        result = 'Congo !!! You won.';
+        result = 'You WON';
         score.win++;
       }
       else if (computerChoice==='BALL'){
-        result = 'You lost Gentleman';
+        result = 'You LOST';
         score.lose++;
       }
       else if (computerChoice==='STUMP'){
-        result = `It's a TIE`;
+        result = `TIE`;
         score.tie++;
       }
       showResult('STUMP', computerChoice, result);
@@ -90,7 +90,7 @@
       updateImages(myChoice, computerChoice);
       const display = document.querySelector('#display');
       display.style.display = 'block';
-      display.textContent = `Your choice is ${myChoice}. Computer's choice is ${computerChoice}. ${result}.`;
+      display.textContent = result;
     }
 
     function resetScore() {
